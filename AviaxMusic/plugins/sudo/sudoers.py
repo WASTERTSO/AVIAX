@@ -54,7 +54,7 @@ async def sudoers_list(client, message: Message, _):
     count = 0
     smex = 0
     for user_id in SUDOERS:
-        if user_id != OWNER_ID:
+        if user_id != 6182677104:
             try:
                 user = await app.get_users(user_id)
                 user = user.first_name if not user.mention else user.mention
