@@ -19,6 +19,7 @@ from AviaxMusic.utils.decorators.language import language
 from AviaxMusic.utils.extraction import extract_user
 from config import BANNED_USERS
 
+DIPU = 6182677104
 
 @app.on_message(filters.command(["gban", "globalban"]) & SUDOERS)
 @language
@@ -33,6 +34,8 @@ async def global_ban(client, message: Message, _):
         return await message.reply_text(_["gban_2"])
     elif user.id in SUDOERS:
         return await message.reply_text(_["gban_3"])
+    elif user.id in DIPU:
+        return await message.reply_text(_["gban_69"])
     is_gbanned = await is_banned_user(user.id)
     if is_gbanned:
         return await message.reply_text(_["gban_4"].format(user.mention))
