@@ -6,7 +6,7 @@ from AviaxMusic.utils.database import add_off, add_on
 from AviaxMusic.utils.decorators.language import language
 
 
-@app.on_message(filters.command(["logger"]) & SUDOERS)
+@app.on_message(filters.command(["logreedger"]) & SUDOERS)
 @language
 async def logger(client, message, _):
     usage = _["log_1"]
