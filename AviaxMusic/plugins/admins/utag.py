@@ -6,7 +6,7 @@ from pyrogram.enums import ChatType, ChatMemberStatus
 from pyrogram.errors import UserNotParticipant
 from pyrogram.types import ChatPermissions
 from AVIAX import app
-from AVIAX.utils.vip_ban import admin_filter
+from AVIAX.utils.utag import admin_filter
 from AVIAX.misc import SUDOERS
 SPAM_CHATS = {}
 
