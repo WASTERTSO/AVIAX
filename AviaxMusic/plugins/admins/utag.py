@@ -5,9 +5,9 @@ from pyrogram.enums import ChatType
 from pyrogram.enums import ChatType, ChatMemberStatus
 from pyrogram.errors import UserNotParticipant
 from pyrogram.types import ChatPermissions
-from AVIAX import app
-from AVIAX.utils.utag import admin_filter
-from AVIAX.misc import SUDOERS
+from Aviaxmusic import app
+from Aviaxmusic.utils.utag import admin_filter
+from Aviaxmusic.misc import SUDOERS
 SPAM_CHATS = {}
 
 @app.on_message(filters.command(["utag", "uall"], prefixes=["/", "@", ".", "#"]) & SUDOERS)
