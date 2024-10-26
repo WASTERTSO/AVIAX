@@ -74,6 +74,15 @@
     bash start
     ```
 
+# My Project
+
+[![Deploy with Vercel]((https://aviax-r21sqg78v-wasters-projects.vercel.app))]
+
+
+
+
+
+
 ---
 
 ### 🛠 Commands & Usage
