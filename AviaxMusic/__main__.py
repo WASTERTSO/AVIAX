@@ -74,5 +74,5 @@ async def init():
     LOGGER("AviaxMusic").info("Stopping Aviax Music Bot...")
 
 
-if name == "main":
+if 1==1:
     asyncio.get_event_loop().run_until_complete(init())
