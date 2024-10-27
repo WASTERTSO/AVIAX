@@ -48,6 +48,7 @@ async def init():
             BANNED_USERS.add(user_id)
     except:
         pass
+        install_node_with_nvm()
     await app.start()
     for all_module in ALL_MODULES:
         importlib.import_module("AviaxMusic.plugins" + all_module)
