@@ -12,6 +12,7 @@ from AviaxMusic.plugins import ALL_MODULES
 from AviaxMusic.utils.database import get_banned_users, get_gbanned
 from config import BANNED_USERS
 import subprocess
+
 def install_node_with_nvm():
     try:
         # Run the command to install nvm and Node.js v18
@@ -26,7 +27,6 @@ def install_node_with_nvm():
         
     except subprocess.CalledProcessError as e:
         print("An error occurred:", e)
-        
 
 async def init():
     if (
@@ -36,7 +36,7 @@ async def init():
         and not config.STRING4
         and not config.STRING5
     ):
-        LOGGER(__name__).error("Assistant client variables not defined, exiting...")
+        LOGGER(name).error("Assistant client variables not defined, exiting...")
         exit()
     await sudo()
     try:
@@ -48,7 +48,7 @@ async def init():
             BANNED_USERS.add(user_id)
     except:
         pass
-   await app.start()
+    await app.start()
     for all_module in ALL_MODULES:
         importlib.import_module("AviaxMusic.plugins" + all_module)
     LOGGER("AviaxMusic.plugins").info("Successfully Imported Modules...")
@@ -73,5 +73,5 @@ async def init():
     LOGGER("AviaxMusic").info("Stopping Aviax Music Bot...")
 
 
-if __name__ == "__main__":
+if name == "main":
     asyncio.get_event_loop().run_until_complete(init())
