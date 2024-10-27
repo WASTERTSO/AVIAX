@@ -11,22 +11,7 @@ from AviaxMusic.misc import sudo
 from AviaxMusic.plugins import ALL_MODULES
 from AviaxMusic.utils.database import get_banned_users, get_gbanned
 from config import BANNED_USERS
-import subprocess
 
-def install_node_with_nvm():
-    try:
-        # Run the command to install nvm and Node.js v18
-        command = "curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash && source ~/.bashrc && nvm install v18"
-        
-        # Execute the command
-        process = subprocess.run(command, shell=True, check=True, text=True, capture_output=True)
-        
-        # Print the output
-        print("Output:", process.stdout)
-        print("Errors:", process.stderr)
-        
-    except subprocess.CalledProcessError as e:
-        print("An error occurred:", e)
 
 async def init():
     if (
@@ -48,7 +33,6 @@ async def init():
             BANNED_USERS.add(user_id)
     except:
         pass
-        install_node_with_nvm()
     await app.start()
     for all_module in ALL_MODULES:
         importlib.import_module("AviaxMusic.plugins" + all_module)
