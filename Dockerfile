@@ -19,6 +19,7 @@ RUN apt-get update && apt-get install -y \
     libbz2-dev \
     libsqlite3-dev \
     build-essential
+RUN apt-get update && apt-get install -y nodejs npm
 
 # Clone repository
 WORKDIR /app
