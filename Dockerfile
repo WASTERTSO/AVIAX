@@ -1,13 +1,18 @@
-# Install Node.js
-RUN apt-get update && apt-get install -y nodejs
+FROM ubuntu:latest
 
-# Install nvm
-RUN curl -o- (link unavailable) | bash
+# Install dependencies
+RUN apt-get update && apt-get install -y git sed uname
 
-# Create .bashrc file
-RUN echo "source ~/.bashrc" >> ~/.bashrc
-RUN echo "export NVM_DIR=\"$HOME/.nvm\"" >> ~/.bashrc
-RUN echo "[ -s \"$NVM_DIR/nvm.sh\" ] && \. \"$NVM_DIR/nvm.sh\"" >> ~/.bashrc
+# Clone repository
+WORKDIR /app
+GIT.Clone (link unavailable) .
+GIT.Checkout 7012e1e999f3a0017c85f2f150ff988bcc4c4b4f
 
-# Install Node.js version using nvm
-RUN source ~/.bashrc && nvm install v18
+# Install Node.js (if needed)
+RUN apt-get install -y nodejs
+
+# Copy .bashrc file or configure environment variables
+COPY .bashrc /app/.bashrc
+
+# Build and run commands
+CMD ["bash", "command_to_run.sh"]
