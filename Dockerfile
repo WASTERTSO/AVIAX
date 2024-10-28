@@ -1,3 +1,5 @@
+bash
+# Use Ubuntu as the base image
 FROM ubuntu:latest
 
 # Install dependencies
@@ -18,14 +20,14 @@ RUN apt-get update && apt-get install -y \
     libsqlite3-dev \
     build-essential
 
-# Install Node.js and npm
-RUN curl -fsSL (link unavailable) | bash - && \
-    apt-get install -y nodejs
-
 # Clone repository
 WORKDIR /app
 RUN git clone (link unavailable) .
-RUN git checkout 7beed6c388f79c465e31bbf370673febf3bb08a7
+RUN git checkout 2cbafca220028caee0d4212bd8e866c7617e0158
+
+# Install Node.js and npm
+RUN curl -fsSL (link unavailable) | bash - && \
+    apt-get install -y nodejs
 
 # Install AviaxMusic dependencies
 RUN npm install
