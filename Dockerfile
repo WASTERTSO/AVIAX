@@ -1,4 +1,3 @@
-bash
 # Use Ubuntu as the base image
 FROM ubuntu:latest
 
@@ -18,17 +17,22 @@ RUN apt-get update && apt-get install -y \
     zlib1g-dev \
     libbz2-dev \
     libsqlite3-dev \
-    build-essential
-RUN apt-get update && apt-get install -y nodejs npm
+    build-essential \
+    nodejs \
+    npm
+
+# Create .bashrc file
+RUN echo "export NVM_DIR=\"$HOME/.nvm\"" >> /workspace/.bashrc
+RUN echo "[ -s \"$NVM_DIR/nvm.sh\" ] && \. \"$NVM_DIR/nvm.sh\"" >> /workspace/.bashrc
+
+# Install nvm and Node.js v18
+RUN curl -o- (link unavailable) | bash && \
+    source ~/.bashrc && nvm install v18
 
 # Clone repository
 WORKDIR /app
 RUN git clone (link unavailable) .
 RUN git checkout 2cbafca220028caee0d4212bd8e866c7617e0158
-
-# Install Node.js and npm
-RUN curl -fsSL (link unavailable) | bash - && \
-    apt-get install -y nodejs
 
 # Install AviaxMusic dependencies
 RUN npm install
