@@ -26,12 +26,12 @@ RUN echo "export NVM_DIR=\"$HOME/.nvm\"" >> /workspace/.bashrc
 RUN echo "[ -s \"$NVM_DIR/nvm.sh\" ] && \. \"$NVM_DIR/nvm.sh\"" >> /workspace/.bashrc
 
 # Install nvm and Node.js v18
-RUN curl -o- (link unavailable) | bash && \
+RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash && \
     source ~/.bashrc && nvm install v18
 
 # Clone repository
 WORKDIR /app
-RUN git clone https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh
+RUN git clone https://github.com/wastertso/aviax.git
 RUN git checkout 2cbafca220028caee0d4212bd8e866c7617e0158
 
 # Install AviaxMusic dependencies
