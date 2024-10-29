@@ -21,12 +21,9 @@ RUN apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # Install nvm and Node.js
 ENV NVM_DIR=/root/.nvm
+RUN curl -o- (link unavailable) | bash
 ENV NODE_VERSION=18
-RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash && \
-    . $NVM_DIR/nvm.sh && \
-    nvm install $NODE_VERSION && \
-    nvm use $NODE_VERSION && \
-    nvm alias default $NODE_VERSION
+RUN . $NVM_DIR/nvm.sh && nvm install $NODE_VERSION && nvm use $NODE_VERSION && nvm alias default $NODE_VERSION
 
 # Clone repository
 WORKDIR /app
