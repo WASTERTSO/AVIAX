@@ -25,9 +25,10 @@ RUN apt-get update && apt-get install -y \
 RUN echo "export NVM_DIR=\"$HOME/.nvm\"" >> /workspace/.bashrc
 RUN echo "[ -s \"$NVM_DIR/nvm.sh\" ] && \. \"$NVM_DIR/nvm.sh\"" >> /workspace/.bashrc
 
-# Install nvm and Node.js v18
-RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash && \
-    source ~/.bashrc && nvm install v18
+# Install nvm and Node.js
+RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+ENV NVM_DIR=/root/.nvm
+RUN . $NVM_DIR/nvm.sh && nvm install 18
 
 # Clone repository
 WORKDIR /app
