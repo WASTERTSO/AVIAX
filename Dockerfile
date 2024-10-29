@@ -31,7 +31,7 @@ RUN curl -o- (link unavailable) | bash && \
 
 # Clone repository
 WORKDIR /app
-RUN git clone (link unavailable) .
+RUN git clone https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh
 RUN git checkout 2cbafca220028caee0d4212bd8e866c7617e0158
 
 # Install AviaxMusic dependencies
