@@ -1,13 +1,11 @@
-# Use Ubuntu as the base image
-FROM ubuntu:latest
+# Use Ubuntu 20.04 as the base image
+FROM ubuntu:20.04
 
 # Install dependencies
-RUN apt-get update && apt-get install -y \
+RUN apt-get update && apt-get install -y --no-install-recommends \
     git \
-    sed \
-    uname \
     curl \
-    wget \
+    build-essential \
     libcurl4-openssl-dev \
     libssl-dev \
     libgtest-dev \
@@ -16,27 +14,30 @@ RUN apt-get update && apt-get install -y \
     libxml2-dev \
     zlib1g-dev \
     libbz2-dev \
-    libsqlite3-dev \
-    build-essential \
-    nodejs \
-    npm
+    libsqlite3-dev
 
-# Create .bashrc file
-RUN echo "export NVM_DIR=\"$HOME/.nvm\"" >> /workspace/.bashrc
-RUN echo "[ -s \"$NVM_DIR/nvm.sh\" ] && \. \"$NVM_DIR/nvm.sh\"" >> /workspace/.bashrc
+# Clean up apt cache
+RUN apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # Install nvm and Node.js
-RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
 ENV NVM_DIR=/root/.nvm
-RUN . $NVM_DIR/nvm.sh && nvm install 18
+ENV NODE_VERSION=18
+RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash && \
+    . $NVM_DIR/nvm.sh && \
+    nvm install $NODE_VERSION && \
+    nvm use $NODE_VERSION && \
+    nvm alias default $NODE_VERSION
 
 # Clone repository
 WORKDIR /app
-RUN git clone https://github.com/wastertso/aviax.git
-RUN git checkout 2cbafca220028caee0d4212bd8e866c7617e0158
+RUN . $NVM_DIR/nvm.sh && \
+    git clone  https://github.com/wastertso/aviax.git && \
+    git checkout 2cbafca220028caee0d4212bd8e866c7617e0158
 
 # Install AviaxMusic dependencies
-RUN npm install
+RUN . $NVM_DIR/nvm.sh && \
+    npm install --production && \
+    npm cache clean --force
 
 # Expose port
 EXPOSE 3000
