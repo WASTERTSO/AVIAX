@@ -17,14 +17,18 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     libsqlite3-dev \
     && apt-get clean && rm -rf /var/lib/apt/lists/*
 
-# Install nvm and Node.js
-ENV NVM_DIR=/root/.nvm
-ENV NODE_VERSION=18
+# Install NVM
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.5/install.sh | bash
 
-RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.5/install.sh | bash \
-    && . $NVM_DIR/nvm.sh \
-    && nvm install $NODE_VERSION \
-    && npm install -g npm
+# Load NVM (this step may vary depending on your shell)
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+
+# Install Node.js (replace with your desired version)
+nvm install 14.17.0
+
+# Update npm
+npm install -g npm
 
 # Clone repository
 WORKDIR /app
