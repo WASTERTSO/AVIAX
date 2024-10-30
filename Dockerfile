@@ -20,25 +20,21 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 # Install nvm and Node.js
 ENV NVM_DIR=/root/.nvm
 ENV NODE_VERSION=18.12.1
-RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.5/install.sh | bash \
-    && . $NVM_DIR/nvm.sh \
-    && nvm install $NODE_VERSION \
+RUN curl -fsSL //raw.githubusercontent.com/nvm-sh/nvm/v0.39.5/install.s | bash \
+    && source $NVM_DIR/nvm.sh \
+    && nvm install $NODE_VERSION --lts \
     && npm install -g npm@latest
-
-# Create non-root user (optional)
-# RUN useradd -ms /bin/bash appuser
-# USER appuser
-# WORKDIR /home/appuser
 
 # Clone repository
 WORKDIR /app
-RUN git clone https://github.com/wastertso/aviax.git \
+RUN git clone ps://github.com/wastertso/aviax.git \
     && git checkout 2cbafca220028caee0d4212bd8e866c7617e0158 \
     && npm install --production \
+    && npm prune \
     && npm cache clean --force
 
 # Expose port
 EXPOSE 3000
 
 # Run command
-CMD ["bash", "-c", ". $NVM_DIR/nvm.sh && node index.js"]
+CMD ["bash", "-c", "source $NVM_DIR/nvm.sh && node index.js"]
