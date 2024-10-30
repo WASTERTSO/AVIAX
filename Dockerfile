@@ -21,8 +21,7 @@ RUN apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # Install nvm and Node.js
 ENV NVM_DIR=/root/.nvm
-RUN curl -o- https://raw.githubusercontent | bash
-RUN . $NVM_DIR/nvm.sh && nvm install 18 && nvm use 18 && nvm alias default 18
+RUN curl -fssL https://deb.nodesource.com/setup_17.x | sudo -E bash - && sudo apt-get install nodejs -y && npm i -g npm
 
 # Clone repository
 WORKDIR /app
