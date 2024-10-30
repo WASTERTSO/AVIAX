@@ -21,14 +21,13 @@ RUN apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # Install nvm and Node.js
 ENV NVM_DIR=/root/.nvm
-RUN curl -o- (link unavailable) | bash
-ENV NODE_VERSION=18
-RUN . $NVM_DIR/nvm.sh && nvm install $NODE_VERSION && nvm use $NODE_VERSION && nvm alias default $NODE_VERSION
+RUN curl -o- https://raw.githubusercontent | bash
+RUN . $NVM_DIR/nvm.sh && nvm install 18 && nvm use 18 && nvm alias default 18
 
 # Clone repository
 WORKDIR /app
 RUN . $NVM_DIR/nvm.sh && \
-    git clone  https://github.com/wastertso/aviax.git && \
+    git clone https://github.com/wastertso/aviax.git && \
     git checkout 2cbafca220028caee0d4212bd8e866c7617e0158
 
 # Install AviaxMusic dependencies
