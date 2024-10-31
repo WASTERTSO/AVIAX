@@ -10,6 +10,12 @@ COPY package*.json ./
 # Install any needed packages
 RUN npm install
 
+# Install dependencies
+RUN npm install --production
+
+# Set environment variables
+ENV NODE_ENV production
+
 # Bundle app source
 COPY . .
 
