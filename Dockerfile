@@ -1,40 +1,23 @@
-# Use Ubuntu 20.04 as the base image
-FROM ubuntu:20.04
+# Use an official Node.js runtime as a parent image
+FROM node:18
 
-# Install dependencies
-RUN apt-get update && apt-get install -y --no-install-recommends \
-    git \
-    curl \
-    build-essential \
-    libcurl4-openssl-dev \
-    libssl-dev \
-    libgtest-dev \
-    libreadline-dev \
-    libncurses5-dev \
-    libxml2-dev \
-    zlib1g-dev \
-    libbz2-dev \
-    libsqlite3-dev \
-    && apt-get clean && rm -rf /var/lib/apt/lists/*
+# Set the working directory
+WORKDIR /usr/src/app
 
-# Install nvm and Node.js
-ENV NVM_DIR=/root/.nvm
-ENV NODE_VERSION=18.12.1
-RUN curl -fsSL //raw.githubusercontent.com/nvm-sh/nvm/v0.39.5/install.s | bash \
-    && source $NVM_DIR/nvm.sh \
-    && nvm install $NODE_VERSION --lts \
-    && npm install -g npm@latest
+# Copy the package.json file
+COPY package*.json ./
 
-# Clone repository
-WORKDIR /app
-RUN git clone ps://github.com/wastertso/aviax.git \
-    && git checkout 2cbafca220028caee0d4212bd8e866c7617e0158 \
-    && npm install --production \
-    && npm prune \
-    && npm cache clean --force
+# Install any needed packages
+RUN npm install
 
-# Expose port
-EXPOSE 3000
+# Bundle app source
+COPY . .
 
-# Run command
-CMD ["bash", "-c", "source $NVM_DIR/nvm.sh && node index.js"]
+# Make port 80 available to the world outside this container
+EXPOSE 80
+
+# Define environment variable
+ENV NODE_VERSION 18.x
+
+# Run app.js when the container launches
+CMD ["node", "app.js"]
