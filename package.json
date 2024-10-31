@@ -1,10 +1,8 @@
 {
   "name": "AviaxMusic",
   "version": "1.0.0",
+  "main": "app.js",
   "scripts": {
-    "start": "node --version"
-  },
-  "dependencies": {
-    "node": "18.x"
+    "start": "node app.js"
   }
 }
