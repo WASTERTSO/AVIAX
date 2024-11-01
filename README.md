@@ -26,6 +26,13 @@
 
 ---
 
+
+[![Deploy to Koyeb](https://www.koyeb.com/static/images/deploy/button.svg)](https://app.koyeb.com/deploy?name=aviax&type=git&repository=WASTERTSO%2FAVIAX&branch=master&builder=dockerfile&env%5BAPI_HASH%5D=41c8446861ac499d58c1ebfde3ff39b7&env%5BAPI_ID%5D=20526156&env%5BBOT_TOKEN%5D=7940225172%3AAAHzalq_9-8GgOZHAvJ4h8nK8xh74oLS1Io&env%5BLOG_GROUP_ID%5D=-1002004320984&env%5BMONGO_DB_URI%5D=mongodb%2Bsrv%3A%2F%2FEXONTESTMONGO%3AEXONTESTMONGO%40cluster0.bviw7ic.mongodb.net%2F%3FretryWrites%3Dtrue%26w%3Dmajority&env%5BNODE_VERSION%5D=15.0.0&env%5BOWNER_ID%5D=5849341651&env%5BSTRING_SESSION%5D=BQHEmncARFc0-_GazHCgAwmGjyDUJlhqtrt5OePHKL6wYYqa3xBsXy-9E5qcxvOJbU3DM3wllEUv3M6xURLwHaJxv_l-RWxhJCGTBzq8sh5dAwLNQnVZtW9rJtGrhiFQTGlGNAZih7nVsaLoxF03glCEa-gLNcYa-IAQSCLn5BfaEGHjnqrmxKVHR3MojyjtrML1OIJ_YWD8XnSyDb9rWg022MLSQcxVXC5uIByHT0Mbdd1RD16AXmM8Ez8DPn0BsTpGosv_1gS8RUJ19NFd5cSOvmdk50LD9TJgVhnibshrJTpHyXWTidD-9PhzbI2y3iI-zjZ6DJZrpbtS3IywAkitxnkqZgAAAAFwtMXTAA&ports=8000%3Bhttp%3B%2F)
+
+
+
+
+
 ### 🔧 Quick Setup
 
 1. **Upgrade & Update:**
