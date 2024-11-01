@@ -1,9 +1,10 @@
 version: '3'
+
 services:
-  aviaxmusic:
-    build: .
-    restart: always
+  aviax:
+    build:
+      context: .
+      dockerfile: Dockerfile
     ports:
       - "3000:3000"
-    environment:
-      - NVM_DIR=/root/.nvm
+    restart: always
