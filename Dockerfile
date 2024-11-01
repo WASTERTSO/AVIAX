@@ -1,22 +1,12 @@
-FROM node:18
+FROM nikolaik/python-nodejs:python3.10-nodejs19
 
-# Set working directory
-WORKDIR /app
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends ffmpeg \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
 
-# Copy package file
-COPY package*.json .
+COPY . /app/
+WORKDIR /app/
+RUN pip3 install --no-cache-dir -U -r requirements.txt
 
-# Clean npm cache
-RUN npm cache clean --force
-
-# Install dependencies
-RUN npm install --production
-
-# Copy application code
-COPY . .
-
-# Expose port
-EXPOSE 3000
-
-# Run command
-CMD ["npm", "start"]
+CMD bash start
