@@ -54,7 +54,7 @@
    ```
 5. **Clone the Repository**
    ```bash
-   git clone https://github.com/TeamAviax/AviaxMusic && cd AviaxMusic
+   git clone https://github.com/Wastertso/Aviax && cd Aviax
    ```
 6. **Install Requirements**
    ```bash
