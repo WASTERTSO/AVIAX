@@ -27,7 +27,7 @@ async def is_heroku():
     return "heroku" in socket.getfqdn()
 
 
-@app.on_message(filters.command(["getesstlog", "lojknbfgs", "getltrwaogs"]) & SUDOERS)
+@app.on_message(filters.command(["getftr3esstlog", "lo432fjknbfgs", "getltrwa5eeeogs"]) & SUDOERS)
 @language
 async def log_(client, message, _):
     try:
@@ -36,7 +36,7 @@ async def log_(client, message, _):
         await message.reply_text(_["server_1"])
 
 
-@app.on_message(filters.command(["update", "gitpull"]) & SUDOERS)
+@app.on_message(filters.command(["updrezzsate", "gitpuyytull"]) & SUDOERS)
 @language
 async def update_(client, message, _):
     if await is_heroku():
