@@ -91,7 +91,7 @@ start_4 : "🎄 <b>𝖲𝗎𝗉𝖾𝗋𝖦𝗋𝗈𝗎𝗉 𝖭𝖾𝖾𝖽𝖾
 start_5 : "<b>↝ 𝖡𝗅𝖺𝖼𝗄𝖫𝗂𝗌𝗍𝖾𝖽 𝖢𝗁𝖺𝗍𝗌 ↜</b>\n\n𝖳𝗁𝗂𝗌 𝖢𝗁𝖺𝗍 𝖨𝗌 𝖡𝗅𝖺𝖼𝗄𝖫𝗂𝗌𝗍𝖾𝖽 𝖮𝗇 {0} 𝖣𝖺𝗍𝖺𝖻𝖺𝗌𝖾 .\n𝖱𝖾𝗊𝗎𝖾𝗌𝗍 𝖠 <a href={1}>𝖲𝗎𝖽𝗈𝖴𝗌𝖾𝗋</a> 𝖳𝗈 𝖴𝗇𝖻𝗅𝖺𝖼𝗄𝖫𝗂𝗌𝗍 𝖸𝗈𝗎𝗋 𝖢𝗁𝖺𝗍 𝖮𝗋 𝖵𝗂𝗌𝗂𝗍 <a href={2}>𝖲𝗎𝗉𝗉𝗈𝗋𝗍 𝖢𝗁𝖺𝗍 .</a>"
 start_6 : "<b>Tʀᴀᴄᴋ ɪɴғᴏʀᴍᴀᴛɪᴏɴ </b> \n\n <b>Tɪᴛʟᴇ :</b> {0}\n\n <b>Dᴜʀᴀᴛɪᴏɴ :</b> {1} Mɪɴᴜᴛᴇs\n <b>Vɪᴇᴡs :</b> <code>{2}</code>\n <b>Pᴜʙʟɪsʜᴇᴅ ᴏɴ :</b> {3}\n <b>Cʜᴀɴɴᴇʟ :</b> <a href={4}>{5}</a>\n\n<u><b>Sᴇᴀʀᴄʜ ᴘᴏᴡᴇʀ ʙʏ : {6}</b></u>"
 
-help_1 : "This is Commands Section\n\nNow You Can See My All Module"
+help_1 : "Tʜɪs ɪs ᴀ ᴍᴜsɪᴄ sᴇᴄᴛɪᴏɴ\n\nɴᴏᴡ sᴇᴇ ʜᴇʟᴘ ᴀɴᴅ ᴄᴏᴍᴍᴀɴᴅs"
 help_2 : "Click On The Button Below To Get My Help Menu In Your Pm"
 
 lang_1 : "𝖯𝗅𝖾𝖺𝗌𝖾 𝖢𝗁𝗈𝗈𝗌𝖾 𝖳𝗁𝖾 𝖫𝖺𝗇𝗀𝗎𝖺𝗀𝖾 𝖶𝗁𝗂𝖼𝗁 𝖸𝗈𝗎 𝖶𝖺𝗇𝗇𝖺 𝖲𝖾𝗍 𝖠𝗌 𝖳𝗁𝗂𝗌 𝖦𝗋𝗈𝗎𝗉'𝗌 𝖣𝖾𝖿𝖺𝗎𝗅𝗍 𝖫𝖺𝗇𝗀𝗎𝖺𝗀𝖾 . :"
@@ -188,14 +188,14 @@ S_B_7 : "repo"
 S_B_8 : "YouTube"
 S_B_9 : "Support"
 
-H_B_1 : "Admin"
-H_B_2 : "C-Play"
-H_B_3 : "Gban"
-H_B_4 : "Loop"
-H_B_5 : "Play"
-H_B_6 : "Shuffle"
-H_B_7 : "Seek"
-H_B_8 : "Song"
+H_B_1 : "Aᴅᴍɪɴ"
+H_B_2 : "C-ᴘʟᴀʏ"
+H_B_3 : "Gʙᴀɴ"
+H_B_4 : "Lᴏᴏᴘ"
+H_B_5 : "Pʟᴀʏ"
+H_B_6 : "Sʜᴜғғʟᴇ"
+H_B_7 : "Sᴇᴇᴋ"
+H_B_8 : "Sᴏɴɢ"
 
 
 P_B_1 : "𝖠𝗎𝖽𝗂𝗈"
