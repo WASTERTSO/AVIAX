@@ -12,7 +12,7 @@ from AviaxMusic.utils.database import (
 from strings import get_string
 
 
-@app.on_message(filters.command(["mainttwtgwvsenance"]) & SUDOERS)
+@app.on_message(filters.command(["maintterstwtgwvsenance"]) & SUDOERS)
 async def maintenance(client, message: Message):
     try:
         language = await get_lang(message.chat.id)
