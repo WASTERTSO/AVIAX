@@ -10,7 +10,7 @@ def help_pannel(_, START: Union[bool, int] = None):
     second = [
         InlineKeyboardButton(
             text=_["BACK_BUTTON"],
-            callback_data="settingsback_helper",
+            callback_data="fallen_back",
         ),
     ]
     mark = second if START else first
